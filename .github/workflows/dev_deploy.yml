@@ -21,6 +21,9 @@ jobs:
       - name: Bundle validate
         run: databricks bundle validate
         working-directory: ./nyctaxi
+        env:
+          DATABRICKS_HOST: ${{ vars.DATABRICKS_HOST }}
+          DATABRICKS_TOKEN: ${{ secrets.SP_TOKEN }}
 
       - name: Bundle deploy (dev)
         run: databricks bundle deploy -t dev
