@@ -18,6 +18,11 @@ jobs:
       - name: Setup Databricks CLI
         uses: databricks/setup-cli@main
 
+      - name: Install uv (for wheel build)
+        run: |
+          curl -LsSf https://astral.sh/uv/install.sh | sh
+          echo "$HOME/.local/bin" >> $GITHUB_PATH
+
       - name: Bundle validate
         run: databricks bundle validate
         working-directory: ./nyctaxi
