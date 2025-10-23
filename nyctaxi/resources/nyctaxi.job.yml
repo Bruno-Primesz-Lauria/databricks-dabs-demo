@@ -18,10 +18,10 @@ resources:
         - task_key: notebook_task
           notebook_task:
             notebook_path: ../src/nyctaxi/nyctaxi_notebook.py
-          base_parameters:                  
-            catalog: "dev"                    
-            schema: "nyc_taxi_dabs"
-            table:  "nyctaxi_demo"
+            base_parameters:                  
+              catalog: "dev"                    
+              schema: "nyc_taxi_dabs"
+              table:  "nyctaxi_demo"
 
         - task_key: refresh_pipeline
           depends_on:
