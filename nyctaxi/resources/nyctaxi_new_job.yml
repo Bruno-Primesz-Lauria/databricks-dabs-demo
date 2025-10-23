@@ -1,0 +1,13 @@
+resources:
+  jobs:
+    nyctaxi_new_job:
+      name: nyctaxi_new_job
+      tasks:
+        - task_key: run_notebook
+          notebook_task:
+            # Caminho RELATIVO ao root do bundle (será sincronizado no deploy)
+            notebook_path: ../src/nyctaxi/nyctaxi_notebook.py
+      # Opcional: notificação rápida se algo falhar
+      email_notifications:
+        on_failure:
+          - bruno.primesz@gmail.com
